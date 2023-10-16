@@ -1,0 +1,28 @@
+.summary__card {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  padding-block: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 25px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon__con {
+  /* border: 2px solid red; */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c5bec1;
+  margin-left: 20px;
+}
+
+.card__about {
+  margin-left: 20px;
+}
+
+.icon__con p {
+  width: 30px;
+}

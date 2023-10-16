@@ -1,0 +1,6 @@
+.repos__page {
+  /* border: 2px solid red; */
+  max-width: var(--maxWidth);
+  padding-inline: var(--widthPadding);
+  margin: 3rem auto;
+}
