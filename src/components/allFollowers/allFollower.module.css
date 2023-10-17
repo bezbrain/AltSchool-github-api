@@ -9,20 +9,32 @@
   width: 100%;
   border-radius: 5px;
   box-shadow: 0px 4px 25px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  margin-block: 2rem;
   height: 230px;
   overflow-y: scroll;
 }
 
 .followers__tag > p {
   position: absolute;
-  top: -15px;
+  top: -25px;
   left: 30px;
   background-color: #fff;
   padding: 15px;
   font-weight: 700;
   font-size: 20px;
-  z-index: 20;
+}
+
+@media screen and (max-width: 500px) {
+  .all__followers {
+    padding-inline: 10px;
+  }
+
+  .followers__tag > p {
+    top: -10px;
+    left: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
 }
 
 .loading__width__height {

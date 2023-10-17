@@ -3,7 +3,7 @@ import axios from "axios";
 export const fetchMyProfile = async () => {
   try {
     const { data } = await axios.get("https://api.github.com/users/bezbrain");
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);

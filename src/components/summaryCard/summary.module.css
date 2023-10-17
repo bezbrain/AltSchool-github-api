@@ -32,6 +32,17 @@
   font-weight: 600;
 }
 
+@media screen and (max-width: 500px) {
+  .icon__con {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon__con p {
+    width: 20px;
+  }
+}
+
 .loading__width__height {
   width: 8px;
   height: 8px;

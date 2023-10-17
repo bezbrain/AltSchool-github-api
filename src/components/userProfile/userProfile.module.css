@@ -5,7 +5,7 @@
   border-radius: 5px;
   box-shadow: 0px 4px 25px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  margin-top: 2rem;
+  margin-block: 2rem 2rem;
   height: 230px;
 }
 
@@ -26,12 +26,13 @@
 
 .user__img__con img {
   width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 
 .profile__con > p:first-child {
   position: absolute;
-  top: -43px;
+  top: -45px;
   background-color: #fff;
   padding: 10px 15px;
   font-weight: 700;
@@ -70,6 +71,36 @@
 .profile__con footer div p:first-child {
   width: 20px;
   margin-right: 10px;
+}
+@media screen and (max-width: 500px) {
+  .profile__con {
+    padding: 10px;
+    height: 180px;
+  }
+
+  .user__img__con {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile__con > p:first-child {
+    font-size: 16px;
+    top: -40px;
+  }
+
+  .profile__con div > h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+
+  .btn__con button {
+    padding: 5px 10px;
+  }
+
+  .profile__con footer div {
+    font-size: 16px;
+  }
 }
 
 .loading__width__height {

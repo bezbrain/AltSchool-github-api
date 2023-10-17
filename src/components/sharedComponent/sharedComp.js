@@ -6,11 +6,11 @@ const SharedComp = () => {
     <header className={styles.sharedLayout__head}>
       <section className={styles.head__text}>
         <div className={styles.email__abbreviate}>
-          <p>OL</p>
+          <p>BE</p>
         </div>
 
         <p>
-          <span>Welcome,</span> <span>OLA@GMAIL.COM</span>
+          <span>Welcome,</span> <span>BELLOQUADRIOLAWALE@GMAIL.COM</span>
         </p>
       </section>
     </header>
