@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./repos.module.css";
-import { SummarySection } from "../../components";
+import { Follower, SummarySection, UserProfile } from "../../components";
 
 const Repos = () => {
   return (
     <main className={styles.repos__page}>
       <SummarySection />
+      <section className={styles.user__and__followers}>
+        <UserProfile />
+        <Follower />
+      </section>
     </main>
   );
 };

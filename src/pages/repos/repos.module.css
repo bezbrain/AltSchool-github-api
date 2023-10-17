@@ -4,3 +4,10 @@
   padding-inline: var(--widthPadding);
   margin: 3rem auto;
 }
+
+.user__and__followers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-block: 5rem 3rem;
+}
