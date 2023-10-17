@@ -33,15 +33,3 @@ export const fetchAllFollowers = async () => {
     console.log(error);
   }
 };
-
-// export const fetchAllFollowings = async () => {
-//   try {
-//     const { data } = await axios.get(
-//       "https://api.github.com/users/bezbrain/following"
-//     );
-//     // console.log(data);
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };

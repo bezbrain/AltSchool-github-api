@@ -2,29 +2,44 @@ import React, { useEffect, useState } from "react";
 import styles from "./userProfile.module.css";
 import { Button } from "../general";
 import { LocationIcon, PlatformIcon } from "../../assets/icons";
+import { Loading } from "../helpers";
 
-const UserProfile = ({ myProfile }) => {
+const UserProfile = ({ myProfile, loading }) => {
   return (
     <section className={styles.profile__con}>
       <p>User</p>
       <header>
         <div className={styles.user__img__con}>
-          <img
-            src="https://avatars.githubusercontent.com/u/108897101?v=4"
-            alt="Testing"
-          />
+          {loading ? (
+            <Loading
+              loadingStyle={styles.loading__width__height}
+              loadingCon={styles.loading__con}
+            />
+          ) : (
+            <img
+              src="https://avatars.githubusercontent.com/u/108897101?v=4"
+              alt="Testing"
+            />
+          )}
         </div>
+
         <div>
-          <h3>{myProfile.name}</h3>
-          <p>
-            <a
-              href="https://github.com/bezbrain"
-              target="_blamk"
-              rel="noreferrer"
-            >
-              @{myProfile.login}
-            </a>
-          </p>
+          {loading ? (
+            <Loading loadingStyle={styles.loading__width__height} />
+          ) : (
+            <>
+              <h3>{myProfile.name}</h3>
+              <p>
+                <a
+                  href="https://github.com/bezbrain"
+                  target="_blamk"
+                  rel="noreferrer"
+                >
+                  @{myProfile.login}
+                </a>
+              </p>
+            </>
+          )}
         </div>
         <a href="https://github.com/bezbrain" target="_blank" rel="noreferrer">
           <Button btnContent="Follow" btnStyles={styles.btn__con} />

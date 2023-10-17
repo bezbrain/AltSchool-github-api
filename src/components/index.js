@@ -4,6 +4,8 @@ import SummarySection from "./summarySection/summarySection";
 import UserProfile from "./userProfile/userProfile";
 import Follower from "./followers/follower";
 import AllFollowers from "./allFollowers/allFollowers";
+import SingleRepo from "./repos/singleRepo";
+import AllRepos from "./repos/allRepos";
 
 export {
   SharedComp,
@@ -12,4 +14,6 @@ export {
   UserProfile,
   Follower,
   AllFollowers,
+  SingleRepo,
+  AllRepos,
 };

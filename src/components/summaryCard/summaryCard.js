@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./summary.module.css";
+import { Loading } from "../helpers";
 
-const SummaryCard = ({ avatar, number, about }) => {
+const SummaryCard = ({ avatar, number, about, loading }) => {
   return (
     <div className={styles.summary__card}>
       <div className={styles.icon__con}>
@@ -9,7 +10,11 @@ const SummaryCard = ({ avatar, number, about }) => {
       </div>
 
       <div className={styles.card__about}>
-        <h2>{number}</h2>
+        {loading ? (
+          <Loading loadingStyle={styles.loading__width__height} />
+        ) : (
+          <h2>{number}</h2>
+        )}
         <p>{about}</p>
       </div>
     </div>

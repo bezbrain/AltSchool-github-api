@@ -7,13 +7,14 @@ const SummarySection = ({
   numberOfRepo,
   numberOfFollowings,
   numberOfFollowers,
+  loading,
 }) => {
   const summary = [
     {
       id: 1,
       avatar: <RepoIcon />,
       number: numberOfRepo,
-      about: "Repos",
+      about: "Repositories",
     },
     {
       id: 2,
@@ -32,7 +33,7 @@ const SummarySection = ({
   return (
     <section className={styles.summary__section}>
       {summary.map((each) => (
-        <SummaryCard key={each.id} {...each} />
+        <SummaryCard key={each.id} {...each} loading={loading} />
       ))}
     </section>
   );
