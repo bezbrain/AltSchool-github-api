@@ -1,17 +1,7 @@
 .followers__section {
-  background-color: #fff;
-  width: 100%;
-  position: relative;
-  border-radius: 5px;
-  box-shadow: 0px 4px 25px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-top: 2rem;
-  height: 230px;
-}
-
-.followers__section > div {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .followers__img__con {
@@ -22,13 +12,4 @@
 .followers__img__con img {
   width: 100%;
   border-radius: 50%;
-}
-
-.followers__section > p {
-  position: absolute;
-  top: -43px;
-  background-color: #fff;
-  padding: 10px 15px;
-  font-weight: 700;
-  font-size: 20px;
 }

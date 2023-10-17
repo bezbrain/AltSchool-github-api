@@ -34,9 +34,10 @@
   font-size: 20px;
 }
 
-.btn__con {
+.profile__con header > a:last-child {
   margin-left: auto;
 }
+
 .btn__con button {
   background-color: inherit;
   border: 2px solid #2eafbb;
@@ -50,6 +51,10 @@
 
 .profile__con > p:nth-child(3) {
   margin-block: 20px;
+}
+
+.profile__con a {
+  font-weight: 600;
 }
 
 .profile__con footer div {

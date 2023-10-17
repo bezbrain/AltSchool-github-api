@@ -26,3 +26,7 @@
 .icon__con p {
   width: 30px;
 }
+
+.card__about p {
+  font-weight: 600;
+}

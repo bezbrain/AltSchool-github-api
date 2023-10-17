@@ -1,21 +1,17 @@
 import React from "react";
 import styles from "./followers.module.css";
 
-const Follower = () => {
+const Follower = ({ avatar_url, login, html_url }) => {
   return (
     <section className={styles.followers__section}>
-      <p>Followers</p>
+      <div className={styles.followers__img__con}>
+        <img src={`${avatar_url}`} alt={`${login}`} />
+      </div>
       <div>
-        <div className={styles.followers__img__con}>
-          <img
-            src="https://avatars.githubusercontent.com/u/108897101?v=4"
-            alt="Testing"
-          />
-        </div>
-        <div>
-          <h3>Name of Follower</h3>
-          <a href="">https://github.com/sample</a>
-        </div>
+        <h3>{login}</h3>
+        <a href={`${html_url}`} target="_blank" rel="noreferrer">
+          {html_url}
+        </a>
       </div>
     </section>
   );

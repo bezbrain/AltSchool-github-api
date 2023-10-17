@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./userProfile.module.css";
 import { Button } from "../general";
 import { LocationIcon, PlatformIcon } from "../../assets/icons";
 
-const UserProfile = () => {
+const UserProfile = ({ myProfile }) => {
   return (
     <section className={styles.profile__con}>
       <p>User</p>
@@ -15,10 +15,20 @@ const UserProfile = () => {
           />
         </div>
         <div>
-          <h3>Bello Quadri</h3>
-          <p>@bezbrain</p>
+          <h3>{myProfile.name}</h3>
+          <p>
+            <a
+              href="https://github.com/bezbrain"
+              target="_blamk"
+              rel="noreferrer"
+            >
+              @{myProfile.login}
+            </a>
+          </p>
         </div>
-        <Button btnContent="Follow" btnStyles={styles.btn__con} />
+        <a href="https://github.com/bezbrain" target="_blank" rel="noreferrer">
+          <Button btnContent="Follow" btnStyles={styles.btn__con} />
+        </a>
       </header>
 
       <p>
