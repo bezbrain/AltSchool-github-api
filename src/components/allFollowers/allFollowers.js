@@ -4,15 +4,23 @@ import { Follower } from "../../components";
 import { fetchAllFollowers } from "../../apis/githubApis";
 import { Loading } from "../helpers";
 
-const AllFollowers = ({ isLoading, setIsLoading }) => {
+const AllFollowers = ({ isLoading, setIsLoading, setIsError, isError }) => {
   const [allFollower, setAllFollowers] = useState([]);
 
   useEffect(() => {
     const awaitFollowers = async () => {
       setIsLoading(true);
-      const getAllFollowers = await fetchAllFollowers();
-      setIsLoading(false);
-      setAllFollowers(getAllFollowers);
+      try {
+        setIsError(false);
+        const getAllFollowers = await fetchAllFollowers(setIsError);
+        setAllFollowers(getAllFollowers);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+        // if (error.message === "Network Error") {
+        //   setIsError(true);
+        // }
+      }
     };
     awaitFollowers();
   }, []);
@@ -27,8 +35,10 @@ const AllFollowers = ({ isLoading, setIsLoading }) => {
               loadingStyle={styles.loading__width__height}
               loadingCon={styles.loading__con}
             />
-          ) : (
+          ) : allFollower?.length > 0 ? (
             allFollower.map((each) => <Follower {...each} key={each.id} />)
+          ) : (
+            <h2 className={styles.loading__con}>No followers found</h2>
           )}
         </>
       </div>

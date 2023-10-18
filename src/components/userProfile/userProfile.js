@@ -18,7 +18,7 @@ const UserProfile = ({ myProfile, loading }) => {
           ) : (
             <img
               src="https://avatars.githubusercontent.com/u/108897101?v=4"
-              alt="Testing"
+              alt="Bez"
             />
           )}
         </div>
@@ -28,14 +28,14 @@ const UserProfile = ({ myProfile, loading }) => {
             <Loading loadingStyle={styles.loading__width__height} />
           ) : (
             <>
-              <h3>{myProfile.name}</h3>
+              <h3>{myProfile?.name || "No record"}</h3>
               <p>
                 <a
                   href="https://github.com/bezbrain"
                   target="_blamk"
                   rel="noreferrer"
                 >
-                  @{myProfile.login}
+                  @{myProfile?.login}
                 </a>
               </p>
             </>

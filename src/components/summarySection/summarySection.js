@@ -4,28 +4,28 @@ import { SummaryCard } from "../../components";
 import { RepoIcon, FollowersIcon, FollowingIcon } from "../../assets/icons";
 
 const SummarySection = ({
+  loading,
   numberOfRepo,
   numberOfFollowings,
   numberOfFollowers,
-  loading,
 }) => {
   const summary = [
     {
       id: 1,
       avatar: <RepoIcon />,
-      number: numberOfRepo,
+      number: numberOfRepo || "No record",
       about: "Repositories",
     },
     {
       id: 2,
       avatar: <FollowersIcon />,
-      number: numberOfFollowers,
+      number: numberOfFollowers || "No record",
       about: "Followers",
     },
     {
       id: 3,
       avatar: <FollowingIcon />,
-      number: numberOfFollowings,
+      number: numberOfFollowings || "No record",
       about: "Followings",
     },
   ];

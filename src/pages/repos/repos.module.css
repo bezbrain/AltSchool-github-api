@@ -5,6 +5,27 @@
   margin: 3rem auto;
 }
 
+.repos__page > p {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #cb0b0b;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: 900;
+  animation: scaleError ease-in-out 1s infinite;
+}
+
+@keyframes scaleError {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .user__and__followers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

@@ -1,12 +1,13 @@
 import axios from "axios";
 
-export const fetchMyProfile = async () => {
+export const fetchMyProfile = async ({ setErrorMsg }) => {
   try {
     const { data } = await axios.get("https://api.github.com/users/bezbrain");
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.log(error);
+    setErrorMsg(error.message);
   }
 };
 
@@ -22,7 +23,7 @@ export const fetchAllRepos = async () => {
   }
 };
 
-export const fetchAllFollowers = async () => {
+export const fetchAllFollowers = async (setErrorMsg) => {
   try {
     const { data } = await axios.get(
       "https://api.github.com/users/bezbrain/followers"
@@ -31,5 +32,6 @@ export const fetchAllFollowers = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    setErrorMsg(error.message);
   }
 };

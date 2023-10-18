@@ -6,28 +6,43 @@ import { fetchMyProfile } from "../../apis/githubApis";
 const Repos = () => {
   const [myProfile, setMyProfile] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState("");
 
   useEffect(() => {
     const awaitProfile = async () => {
       setIsLoading(true);
-      const getMyProfile = await fetchMyProfile();
-      setIsLoading(false);
-      setMyProfile(getMyProfile);
+      try {
+        setIsError(false);
+        const getMyProfile = await fetchMyProfile(setIsError);
+        setMyProfile(getMyProfile);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+        // if (isError === "Network Error") {
+        //   setIsError(true);
+        // }
+      }
     };
     awaitProfile();
   }, []);
 
   return (
     <main className={styles.repos__page}>
+      <p>{isError}</p>
       <SummarySection
-        numberOfRepo={myProfile.public_repos}
-        numberOfFollowers={myProfile.followers}
-        numberOfFollowings={myProfile.following}
         loading={isLoading}
+        numberOfFollowers={myProfile?.followers}
+        numberOfRepo={myProfile?.public_repos}
+        numberOfFollowings={myProfile?.following}
       />
       <section className={styles.user__and__followers}>
         <UserProfile myProfile={myProfile} loading={isLoading} />
-        <AllFollowers isLoading={isLoading} setIsLoading={setIsLoading} />
+        <AllFollowers
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          setIsError={setIsError}
+          isError={isError}
+        />
       </section>
     </main>
   );
