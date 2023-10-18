@@ -49,12 +49,16 @@
 .btn__con button {
   background-color: inherit;
   border: 2px solid #2eafbb;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-radius: 30px;
   color: #2eafbb;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: ease 0.5s all;
+}
+.btn__con button:hover {
+  transform: scale(1.05);
 }
 
 .profile__con > p:nth-child(3) {

@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Repos, SharedLayouts } from "./pages";
+import { ErrorPage, RepoPage, SharedLayouts, SingleRepoDesc } from "./pages";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SharedLayouts />}>
-          <Route index={true} element={<Repos />} />
+          <Route index={true} element={<RepoPage />} />
+          <Route path="/:repoId" element={<SingleRepoDesc />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

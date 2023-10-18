@@ -16,8 +16,19 @@ export const fetchAllRepos = async () => {
     const { data } = await axios.get(
       "https://api.github.com/users/bezbrain/repos"
     );
-    // console.log(data);
+    console.log(data);
     return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchSingleRepo = async (repo) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.github.com/repos/bezbrain/${repo}`
+    );
+    console.log(data);
   } catch (error) {
     console.log(error);
   }

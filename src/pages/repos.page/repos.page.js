@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "./repos.module.css";
-import { AllFollowers, SummarySection, UserProfile } from "../../components";
+import {
+  AllFollowers,
+  AllRepos,
+  SummarySection,
+  UserProfile,
+} from "../../components";
 import { fetchMyProfile } from "../../apis/githubApis";
 
-const Repos = () => {
+const RepoPage = () => {
   const [myProfile, setMyProfile] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState("");
@@ -44,8 +49,9 @@ const Repos = () => {
           isError={isError}
         />
       </section>
+      <AllRepos isLoading={isLoading} setIsLoading={setIsLoading} />
     </main>
   );
 };
 
-export default Repos;
+export default RepoPage;
