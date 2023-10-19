@@ -23,7 +23,7 @@ const AllFollowers = ({ isLoading, setIsLoading, setIsError }) => {
       }
     };
     awaitFollowers();
-  }, []);
+  }, [setIsError, setIsLoading]);
 
   return (
     <section className={styles.followers__tag}>
