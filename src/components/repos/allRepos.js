@@ -19,7 +19,8 @@ const AllRepos = ({ isLoading, setIsLoading }) => {
       }
     };
     getAllRepos();
-  }, []);
+  }, [setIsLoading]);
+
   return (
     <section className={styles.all__repos__section}>
       <h1>My Public Repositories</h1>

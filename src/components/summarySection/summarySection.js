@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./summarySect.module.css";
 import { SummaryCard } from "../../components";
 import { RepoIcon, FollowersIcon, FollowingIcon } from "../../assets/icons";

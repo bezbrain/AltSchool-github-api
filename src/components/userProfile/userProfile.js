@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./userProfile.module.css";
 import { Button } from "../general";
 import { LocationIcon, PlatformIcon } from "../../assets/icons";

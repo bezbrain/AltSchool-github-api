@@ -10,10 +10,7 @@ const SingleRepoDesc = () => {
 
   const [singleRepo, setSingleRepo] = useState({});
 
-  // console.log(repoId);
-
   useEffect(() => {
-    // console.log(fetchSingleRepo(repoId));
     const getSingleRepo = async () => {
       try {
         const getRepo = await fetchSingleRepo(repoId);
@@ -23,7 +20,7 @@ const SingleRepoDesc = () => {
       }
     };
     getSingleRepo();
-  }, []);
+  }, [repoId]);
 
   // Get repo first two characters
   const repoName = singleRepo?.name;

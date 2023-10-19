@@ -4,7 +4,7 @@ import { Follower } from "../../components";
 import { fetchAllFollowers } from "../../apis/githubApis";
 import { Loading } from "../helpers";
 
-const AllFollowers = ({ isLoading, setIsLoading, setIsError, isError }) => {
+const AllFollowers = ({ isLoading, setIsLoading, setIsError }) => {
   const [allFollower, setAllFollowers] = useState([]);
 
   useEffect(() => {
