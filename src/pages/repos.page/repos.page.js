@@ -33,7 +33,7 @@ const RepoPage = () => {
 
   return (
     <main className={styles.repos__page}>
-      <p>{isError}</p>
+      {/* <p>{isError}</p> */}
       <SummarySection
         loading={isLoading}
         numberOfFollowers={myProfile?.followers}

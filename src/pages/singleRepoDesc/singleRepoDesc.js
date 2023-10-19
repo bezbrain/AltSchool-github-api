@@ -22,16 +22,22 @@ const SingleRepoDesc = () => {
         console.log(error);
       }
     };
+    getSingleRepo();
   }, []);
+
+  // Get repo first two characters
+  const repoName = singleRepo?.name;
+  const getFirstTwo = repoName?.slice(0, 2);
+  const capitalizeChar = getFirstTwo?.toUpperCase();
 
   return (
     <main className={styles.single__repo__desc}>
       <article className={styles.each__repo__desc}>
         <header>
           <div className={styles.repo__name__char}>
-            <h2>03</h2>
+            <h2>{capitalizeChar}</h2>
           </div>
-          <h1>Name of Repo</h1>
+          <h1>{singleRepo?.name}</h1>
         </header>
 
         <section className={styles.desc__body}>
@@ -43,31 +49,37 @@ const SingleRepoDesc = () => {
           </div>
 
           <Link to="" target="_blank">
-            GO TO REPO ON GITHUB
+            TO REPO ON GITHUB
           </Link>
 
           <section className={styles.repo__about}>
             <p>
               <span>Created At: </span>
-              <span>2022-12-30</span>
+              <span>{singleRepo?.created_at}</span>
             </p>
             <p>
               <span>Visibilty: </span>
-              <span>Public</span>
+              <span>{singleRepo?.visibility}</span>
             </p>
             <p>
               <span>Forks: </span>
-              <span>0</span>
+              <span>{singleRepo?.forks}</span>
             </p>
             <p>
               <span>Open Issues: </span>
-              <span>0</span>
+              <span>{singleRepo?.open_issues}</span>
             </p>
           </section>
 
           <footer>
-            <Link to="">GO BACK HOME</Link>
-            <Link to="">GO TO MY GITHUB PROFILE</Link>
+            <Link to="/">BACK HOME</Link>
+            <a
+              href="https://github.com/bezbrain"
+              target="_blamk"
+              rel="noreferrer"
+            >
+              TO GITHUB PROFILE
+            </a>
           </footer>
         </section>
       </article>

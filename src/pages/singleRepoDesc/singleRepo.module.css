@@ -1,5 +1,5 @@
 .single__repo__desc {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   max-width: var(--maxWidth);
   padding-inline: var(--widthPadding);
   margin: 3rem auto;
@@ -10,7 +10,8 @@
 }
 
 .each__repo__desc {
-  padding: 2rem;
+  /* width: fit-content; */
+  padding: 3rem 2rem;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 11px 15px 7px rgba(0, 0, 0, 0.1);
@@ -25,9 +26,27 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .each__repo__desc {
+    padding: 2.5rem 1.5rem;
+  }
+  .each__repo__desc header h1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .each__repo__desc {
+    width: 97%;
+    padding: 2.5rem 1rem;
+  }
+  .each__repo__desc header h1 {
+    font-size: 18px;
+  }
+}
+
 .each__repo__desc header {
+  overflow-x: hidden;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -68,6 +87,43 @@
 .repo__about p span:first-child {
   font-weight: 600;
 }
+@media screen and (max-width: 620px) {
+  .repo__name__char {
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .repo__owner {
+    margin: 10px auto;
+  }
+
+  .repo__owner h3 {
+    font-size: 16px;
+  }
+
+  .repo__owner > div {
+    padding: 5px 7px;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  .repo__about {
+    /* border: 2px solid red; */
+    margin-block: 15px;
+  }
+
+  .repo__about p {
+    margin-top: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .repo__name__char {
+    padding: 5px;
+    font-size: 18px;
+    /* margin-right: 10px; */
+  }
+}
 
 .desc__body a {
   text-decoration: none;
@@ -89,11 +145,29 @@
 }
 
 .desc__body footer {
+  width: fit-content;
+  margin-inline: auto;
   display: flex;
 }
 
 .desc__body footer a {
   background-color: #2eafbb;
   color: #fff;
-  margin: 20px;
+  margin: 5px;
+}
+@media screen and (max-width: 620px) {
+  .desc__body a {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .desc__body > a {
+    margin-inline: auto;
+  }
+
+  .desc__body footer a {
+    background-color: #2eafbb;
+    color: #fff;
+    /* margin: 10px; */
+  }
 }
