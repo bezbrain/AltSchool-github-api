@@ -6,7 +6,7 @@ export const fetchMyProfile = async ({ setErrorMsg }) => {
     // console.log(data);
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     setErrorMsg(error.message);
   }
 };
@@ -19,7 +19,8 @@ export const fetchAllRepos = async () => {
     // console.log(data);
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    return error.message;
   }
 };
 
@@ -28,10 +29,11 @@ export const fetchSingleRepo = async (repo) => {
     const { data } = await axios.get(
       `https://api.github.com/repos/bezbrain/${repo}`
     );
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    return error.message;
   }
 };
 
@@ -43,7 +45,7 @@ export const fetchAllFollowers = async (setErrorMsg) => {
     // console.log(data);
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     setErrorMsg(error.message);
   }
 };

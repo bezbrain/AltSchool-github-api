@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SharedLayouts />}>
-          <Route index={true} element={<RepoPage />} />
+          <Route index element={<RepoPage />} />
           <Route path="/:repoId" element={<SingleRepoDesc />} />
           <Route path="/*" element={<ErrorPage />} />
         </Route>

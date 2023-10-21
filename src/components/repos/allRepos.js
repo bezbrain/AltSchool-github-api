@@ -43,4 +43,3 @@ const AllRepos = ({ isLoading, setIsLoading }) => {
 };
 
 export default AllRepos;
-// {}

@@ -4,16 +4,18 @@ import { fetchSingleRepo } from "../../apis/githubApis";
 import styles from "./singleRepo.module.css";
 import { Link } from "react-router-dom";
 import { FollowingIcon } from "../../assets/icons";
+import ErrorPage from "../error/error";
 
 const SingleRepoDesc = () => {
   const { repoId } = useParams();
 
-  const [singleRepo, setSingleRepo] = useState({});
+  const [singleRepo, setSingleRepo] = useState(null);
 
   useEffect(() => {
     const getSingleRepo = async () => {
       try {
         const getRepo = await fetchSingleRepo(repoId);
+        console.log(getRepo);
         setSingleRepo(getRepo);
       } catch (error) {
         console.log(error);
@@ -22,10 +24,14 @@ const SingleRepoDesc = () => {
     getSingleRepo();
   }, [repoId]);
 
-  // Get repo first two characters
+  // Get repo name first two characters
   const repoName = singleRepo?.name;
   const getFirstTwo = repoName?.slice(0, 2);
   const capitalizeChar = getFirstTwo?.toUpperCase();
+
+  if (singleRepo) {
+    return <ErrorPage />;
+  }
 
   return (
     <main className={styles.single__repo__desc}>
