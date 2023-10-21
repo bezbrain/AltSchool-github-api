@@ -7,6 +7,7 @@ import {
   UserProfile,
 } from "../../components";
 import { fetchMyProfile } from "../../apis/githubApis";
+import TitleText from "../../components/helpers/helmet";
 
 const RepoPage = () => {
   const [myProfile, setMyProfile] = useState({});
@@ -22,35 +23,39 @@ const RepoPage = () => {
         setMyProfile(getMyProfile);
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
-        // if (isError === "Network Error") {
-        //   setIsError(true);
-        // }
+        // console.log(error);
+        return error.message;
       }
     };
     awaitProfile();
   }, []);
 
   return (
-    <main className={styles.repos__page}>
-      {/* <p>{isError}</p> */}
-      <SummarySection
-        loading={isLoading}
-        numberOfFollowers={myProfile?.followers}
-        numberOfRepo={myProfile?.public_repos}
-        numberOfFollowings={myProfile?.following}
+    <>
+      <TitleText
+        title="Repos"
+        content="This is my profile and all repos page"
       />
-      <section className={styles.user__and__followers}>
-        <UserProfile myProfile={myProfile} loading={isLoading} />
-        <AllFollowers
-          isLoading={isLoading}
-          setIsLoading={setIsLoading}
-          setIsError={setIsError}
-          isError={isError}
+      <main className={styles.repos__page}>
+        {/* <p>{isError}</p> */}
+        <SummarySection
+          loading={isLoading}
+          numberOfFollowers={myProfile?.followers}
+          numberOfRepo={myProfile?.public_repos}
+          numberOfFollowings={myProfile?.following}
         />
-      </section>
-      <AllRepos isLoading={isLoading} setIsLoading={setIsLoading} />
-    </main>
+        <section className={styles.user__and__followers}>
+          <UserProfile myProfile={myProfile} loading={isLoading} />
+          <AllFollowers
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+            setIsError={setIsError}
+            isError={isError}
+          />
+        </section>
+        <AllRepos isLoading={isLoading} setIsLoading={setIsLoading} />
+      </main>
+    </>
   );
 };
 

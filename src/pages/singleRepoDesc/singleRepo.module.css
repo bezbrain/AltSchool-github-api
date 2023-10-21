@@ -171,3 +171,14 @@
     /* margin: 10px; */
   }
 }
+
+.loading__width__height {
+  width: 16px;
+  height: 16px;
+}
+.loading__con {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}

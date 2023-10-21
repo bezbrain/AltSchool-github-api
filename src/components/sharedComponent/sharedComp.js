@@ -10,7 +10,8 @@ const SharedComp = () => {
         </div>
 
         <p>
-          <span>Welcome,</span> <span>BELLOQUADRIOLAWALE@GMAIL.COM</span>
+          <span>BELLOQUADRIOLAWALE@GMAIL.COM </span>
+          <span>welcomes you</span>
         </p>
       </section>
     </header>
