@@ -72,6 +72,18 @@
   }
 }
 
+.pagination button {
+  background-color: #2eafbb;
+  margin-inline: 5px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination button:hover {
+  transform: scale(1.05);
+}
+
 .loading__width__height {
   width: 16px;
   height: 16px;
