@@ -30,6 +30,7 @@ const AllRepos = ({ isLoading, setIsLoading }) => {
   const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
   const currentRepos = publicRepos.slice(indexOfFirstRepo, indexOfLastRepo);
 
+  // Pagination function
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -46,7 +47,7 @@ const AllRepos = ({ isLoading, setIsLoading }) => {
             />
           ) : currentRepos?.length > 0 ? (
             <>
-              {currentRepos.map((each) => (
+              {currentRepos?.map((each) => (
                 <EachRepo {...each} key={each.id} />
               ))}
               {/* Pagination handling btns */}
