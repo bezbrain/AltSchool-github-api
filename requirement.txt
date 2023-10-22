@@ -1,5 +1,7 @@
-axios
+axios: This is a library used to fetch all needed data from the github endpoints.
 
-react-router-dom
+react-router-dom: This is used to maintain different pages and most importantly, handle dynamic routes.
 
-heroicons.com
+react-helmet: This is used to handle the meta tag and title tag for every page.
+
+heroicons.com: This is where all icons used for this projects were downloaded.
